@@ -25,7 +25,7 @@ module "vpc" {
 # main.tf
 module "secrets" {
   source       = "./modules/secret-manager"
-  secret_name  = "aurora-db-secret1"
+  secret_name  = "usecase-aurora-rds"
   db_username  = var.db_username
   password_length = var.password_length
 }
