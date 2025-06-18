@@ -33,6 +33,7 @@ module "secrets" {
 module "aurora" {
   source               = "./modules/aurora-mysql"
   secret_arn           = module.secrets.secret_arn
+  secret_version_id    = module.secrets.secret_version_id
   cluster_identifier   = var.cluster_identifier
   security_group_ids   = [module.vpc.security_group_id]
   db_subnet_group_name = module.vpc.subnet_group_name
