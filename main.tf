@@ -16,20 +16,9 @@ terraform {
 module "vpc" {
   source = "./modules/vpc"
   vpc_cidr = var.vpc_cidr
-  public_subnet_cidrs = var.public_subnets
   private_subnet_cidrs = var.private_subnets
   availability_zones = var.availability_zone
 }
-
-module "instance" {
-  source = "./modules/instance"
-  instance_type = var.instance_type
-  ami_id = var.ami_id
-  public_subnet_ids = module.vpc.public_subnets  # Changed from public_subnet_ids to public_subnets
-  security_groups_id_ec2 = [module.vpc.aurora_testing_sg]
-}
-
-
 
 # main.tf
 module "secrets" {

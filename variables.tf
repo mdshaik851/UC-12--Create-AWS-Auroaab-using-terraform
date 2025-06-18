@@ -42,3 +42,11 @@ variable "instance_count" {
 variable "password_length" {
   default = 16
 }
+
+variable "instance_type" {
+  
+}
+
+variable "ami_id" {
+  
+}
