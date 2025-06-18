@@ -9,3 +9,7 @@ output "security_group_id" {
 output "vpc" {
   value = aws_vpc.custom.id
 }
+
+output "public_subnets" {
+  value = aws_subnet.public[*].id
+}
