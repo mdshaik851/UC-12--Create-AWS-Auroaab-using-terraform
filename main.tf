@@ -26,6 +26,7 @@ module "secrets" {
   secret_name  = "usecase-aurora-rds"
   db_username  = var.db_username
   password_length = var.password_length
+
 }
 
 module "aurora" {
