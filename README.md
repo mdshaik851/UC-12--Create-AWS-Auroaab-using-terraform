@@ -43,5 +43,7 @@ No resources.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_secret_name"></a> [secret\_name](#output\_secret\_name) | Name of the secret containing database credentials |
 <!-- END_TF_DOCS -->
