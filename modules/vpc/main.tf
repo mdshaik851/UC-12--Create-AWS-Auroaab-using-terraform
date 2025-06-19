@@ -12,6 +12,7 @@ resource "aws_subnet" "private" {
  availability_zone = var.availability_zones[count.index]
 }
 
+
 resource "aws_security_group" "aurora_sg" {
  name = "aurora-sg"
  description = "Security group for Aurora RDS"

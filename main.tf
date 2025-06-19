@@ -20,19 +20,19 @@ module "vpc" {
   availability_zones = var.availability_zone
 }
 
-
-
 # main.tf
 module "secrets" {
   source       = "./modules/secret-manager"
-  secret_name  = "aurora-db-secret"
+  secret_name  = "usecase-aurora-rds"
   db_username  = var.db_username
   password_length = var.password_length
+
 }
 
 module "aurora" {
   source               = "./modules/aurora-mysql"
   secret_arn           = module.secrets.secret_arn
+  secret_version_id    = module.secrets.secret_version_id
   cluster_identifier   = var.cluster_identifier
   security_group_ids   = [module.vpc.security_group_id]
   db_subnet_group_name = module.vpc.subnet_group_name

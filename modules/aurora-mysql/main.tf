@@ -1,6 +1,6 @@
-# modules/aurora_rds/main.tf
 data "aws_secretsmanager_secret_version" "db_credentials" {
-  secret_id = var.secret_arn
+  secret_id  = var.secret_arn
+  version_id = var.secret_version_id
 }
 
 locals {
